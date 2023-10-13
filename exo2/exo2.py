@@ -29,6 +29,7 @@ fixed_tests_True = (
     ( "fails",   "ails"  ),
 )
 
+
 fixed_tests_False = (
     ( "sumo",    "omo"   ),
     ( "samurai", "ra"    ),
@@ -38,3 +39,24 @@ fixed_tests_False = (
     ( "spam",    "eggs"  )
 )
 """
+import unittest
+
+
+class Exo2Test(unittest.TestCase):
+
+    def fixed_tests_True(self):
+        self.assertEqual(True, solution("samurai", "ai"))
+        self.assertEqual(True, solution("ninja",   "ja"))
+        self.assertEqual(True, solution("sensei",  "i"))
+        self.assertEqual(True, solution("abc",     "abc"))
+        self.assertEqual(True, solution("abcabc",  "bc"))
+        self.assertEqual(True, solution("fails",   "ails"))
+
+    def fixed_tests_False(self):
+        self.assertEqual(False, solution("sumo",    "omo"))
+        self.assertEqual(False, solution("samurai", "ra"))
+        self.assertEqual(False, solution("abc",     "abcd"))
+        self.assertEqual(False, solution("ails",    "fails"))
+        self.assertEqual(False, solution("this",    "fails"))
+        self.assertEqual(False, solution("spam",    "eggs"))
+    
