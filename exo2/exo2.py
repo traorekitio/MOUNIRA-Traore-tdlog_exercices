@@ -7,6 +7,16 @@ Examples:
     solution('abc', 'bc') # returns true
     solution('abc', 'd') # returns false
 """
+def solution(chaine1, chaine2):
+    taille_chaine2 = len(chaine2)
+    if taille_chaine2 > len(chaine1):
+        print(False)
+    else:
+        print(chaine2 == chaine1[-taille_chaine2:])
+
+solution('abc', 'bc')
+solution('abc', 'd')
+solution('abc', 'abc')
 
 """
 Create unit test using those cases:
